@@ -3,13 +3,15 @@ import preactIslandPlugins from '@barelyhuman/preact-island-plugins/rollup';
 import babel from '@rollup/plugin-babel';
 
 export default defineNitroConfig({
-  imports: [
-    {
-      name: 'renderToString',
-      as: 'renderComponent',
-      from: 'preact-render-to-string',
-    },
-  ],
+  imports: {
+    imports: [
+      {
+        name: 'renderToString',
+        as: 'renderComponent',
+        from: 'preact-render-to-string',
+      },
+    ]
+  },
   publicAssets: [
     {
       dir: 'public',
