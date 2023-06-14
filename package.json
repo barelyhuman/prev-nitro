@@ -1,0 +1,22 @@
+{
+  "name": "nitro-prev",
+  "version": "1.0.0",
+  "license": "MIT",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "build": "nitro build",
+    "dev": "nitro dev"
+  },
+  "dependencies": {
+    "preact": "^10.15.1",
+    "preact-render-to-string": "^6.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.5",
+    "@babel/plugin-transform-react-jsx": "^7.22.5",
+    "@barelyhuman/preact-island-plugins": "^0.0.13",
+    "@rollup/plugin-babel": "^6.0.3",
+    "nitropack": "^2.4.1"
+  }
+}

@@ -1,0 +1,4 @@
+.generated
+.nitro
+.output
+node_modules 
