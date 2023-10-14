@@ -10,18 +10,20 @@ export default defineNitroConfig({
         as: 'renderComponent',
         from: 'preact-render-to-string',
       },
-    ]
+    ],
   },
   publicAssets: [
     {
       dir: 'public',
       baseURL: '/public',
     },
+    {
+      dir: '.islands',
+      baseURL: '/.islands',
+    },
   ],
   esbuild: {
     options: {
-      jsxFactory: 'h',
-      jsxFragment: 'Fragment',
       loaders: {
         '.js': 'jsx',
       },
@@ -29,6 +31,13 @@ export default defineNitroConfig({
   },
   rollupConfig: {
     plugins: [
+      preactIslandPlugins({
+        rootDir: '.',
+        baseURL: '/.islands',
+        client: {
+          output: '.islands',
+        },
+      }),
       babel({
         babelHelpers: 'bundled',
         plugins: [
@@ -40,15 +49,6 @@ export default defineNitroConfig({
             },
           ],
         ],
-      }),
-      preactIslandPlugins({
-        rootDir: '.',
-        atomic: true,
-        hash: false,
-        baseURL: '/public',
-        bundleClient: {
-          outDir: 'public',
-        },
       }),
     ],
   },
