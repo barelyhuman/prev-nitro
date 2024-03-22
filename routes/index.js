@@ -1,6 +1,7 @@
-import Counter from '../components/counter';
-import renderComponent from 'preact-render-to-string';
+import { Counter } from "~/components/counter";
 
-export default defineEventHandler(() => {
-  return renderComponent(<Counter />);
+export default defineRenderHandler(() => {
+  return {
+    body: <Counter />,
+  };
 });

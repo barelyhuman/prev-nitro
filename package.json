@@ -9,14 +9,11 @@
     "dev": "nitro dev"
   },
   "dependencies": {
-    "preact": "^10.15.1",
-    "preact-render-to-string": "^6.1.0"
+    "preact": "^10.20.0",
+    "preact-render-to-string": "^6.4.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.22.5",
-    "@babel/plugin-transform-react-jsx": "^7.22.5",
-    "@barelyhuman/preact-island-plugins": "^0.1.2",
-    "@rollup/plugin-babel": "^6.0.3",
-    "nitropack": "^2.4.1"
+    "nitro-preact-islands": "^0.0.6",
+    "nitropack": "^2.9.4"
   }
 }

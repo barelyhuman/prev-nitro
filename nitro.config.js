@@ -1,55 +1,13 @@
-import { defineNitroConfig } from 'nitropack/config';
-import preactIslandPlugins from '@barelyhuman/preact-island-plugins/rollup';
-import babel from '@rollup/plugin-babel';
+import { defineNitroConfig } from "nitropack/config";
+import { withIslands } from "nitro-preact-islands";
 
-export default defineNitroConfig({
-  imports: {
-    imports: [
+export default withIslands(
+  defineNitroConfig({
+    publicAssets: [
       {
-        name: 'renderToString',
-        as: 'renderComponent',
-        from: 'preact-render-to-string',
+        dir: "public",
+        baseURL: "/public",
       },
     ],
-  },
-  publicAssets: [
-    {
-      dir: 'public',
-      baseURL: '/public',
-    },
-    {
-      dir: '.islands',
-      baseURL: '/.islands',
-    },
-  ],
-  esbuild: {
-    options: {
-      loaders: {
-        '.js': 'jsx',
-      },
-    },
-  },
-  rollupConfig: {
-    plugins: [
-      preactIslandPlugins({
-        rootDir: '.',
-        baseURL: '/.islands',
-        client: {
-          output: '.islands',
-        },
-      }),
-      babel({
-        babelHelpers: 'bundled',
-        plugins: [
-          [
-            '@babel/plugin-transform-react-jsx',
-            {
-              runtime: 'automatic',
-              importSource: 'preact',
-            },
-          ],
-        ],
-      }),
-    ],
-  },
-});
+  })
+);
