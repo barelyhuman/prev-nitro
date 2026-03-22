@@ -13,7 +13,7 @@
     "preact-render-to-string": "^6.4.1"
   },
   "devDependencies": {
-    "nitro-preact-islands": "^0.0.6",
+    "nitro-preact-islands": "^1.0.0",
     "nitropack": "^2.13.2"
   }
 }
